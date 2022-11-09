@@ -290,12 +290,17 @@
                                      <div class="thumbnnail">
                                          <a href="detail.html"
                                              title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                             
-                                                     <a href="http://127.0.0.1:8000/product/rkte-annka-vor" class="product-name"><span><figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}"
-                                                        alt=""></figure></span></a>
+
+                                             <a href="http://127.0.0.1:8000/product/rkte-annka-vor"
+                                                 class="product-name"><span>
+                                                     <figure><img
+                                                             src="{{ asset('assets/images/products/digital_18.jpg') }}"
+                                                             alt=""></figure>
+                                                 </span></a>
                                      </div>
                                      <div class="product-info">
-                                         <a href="http://127.0.0.1:8000/product/rkte-annka-vor" class="product-name"><span>রক্তে আঁকা ভোর</span></a>
+                                         <a href="http://127.0.0.1:8000/product/rkte-annka-vor"
+                                             class="product-name"><span>রক্তে আঁকা ভোর</span></a>
                                          <div class="wrap-price"><span class="product-price">৳168.00</span></div>
                                      </div>
                                  </div>
@@ -306,11 +311,16 @@
                                      <div class="thumbnnail">
                                          <a href="detail.html"
                                              title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                                     <a href="http://127.0.0.1:8000/product/muktizoddhar-ma" class="product-name"><span> <figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}"
-                                                        alt=""></figure></span></a>
+                                             <a href="http://127.0.0.1:8000/product/muktizoddhar-ma"
+                                                 class="product-name"><span>
+                                                     <figure><img
+                                                             src="{{ asset('assets/images/products/digital_20.jpg') }}"
+                                                             alt=""></figure>
+                                                 </span></a>
                                      </div>
                                      <div class="product-info">
-                                         <a href="http://127.0.0.1:8000/product/muktizoddhar-ma" class="product-name"><span>মুক্তিযোদ্ধার মা</span></a>
+                                         <a href="http://127.0.0.1:8000/product/muktizoddhar-ma"
+                                             class="product-name"><span>মুক্তিযোদ্ধার </span></a>
                                          <div class="wrap-price"><span class="product-price">৳170.00</span></div>
                                      </div>
                                  </div>
