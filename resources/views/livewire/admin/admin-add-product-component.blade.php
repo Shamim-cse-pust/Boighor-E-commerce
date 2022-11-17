@@ -204,7 +204,7 @@
     </div>
 </div>
 
-@push('scripts')
+{{-- @push('scripts')
     <script>
         $(function(){
             tinymce.init({
@@ -231,4 +231,4 @@
 
         });
     </script>
-@endpush
+@endpush --}}

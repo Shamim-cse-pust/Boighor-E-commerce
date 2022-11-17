@@ -54,12 +54,22 @@
                                     <figure><img src="{{ asset('assets/images/products') }}/{{ $sproduct->image }}"
                                             width="800" height="800" alt="{{ $sproduct->name }}"></figure>
                                 </a>
+                                <div class="group-flash">
+                                    <span class="flash-item new-label">new</span>
+                                </div>
+                                <div class="wrap-btn">
+                                    <a href="#" class="function-link">quick view</a>
+                                </div>
                             </div>
                             <div class="product-info">
                                 <a href="{{ route('product.details', ['slug' => $sproduct->slug]) }}"
                                     class="product-name"><span>{{ $sproduct->name }}</span></a>
                                 <div class="wrap-price"><span class="product-price">৳{{ $sproduct->sale_price }}</span>
                                 </div>
+                                <div class="wrap-price"><span
+                                        class="product-price"><del>৳{{ $sproduct->regular_price }}</del></span>
+                                </div>
+                                {{-- <del><span class="product-price regprice">৳{{$sproduct->regular_price}}</span></del> --}}
                             </div>
                         </div>
                     @endforeach
@@ -97,9 +107,14 @@
                                         <div class="product-info">
                                             <a href="{{ route('product.details', ['slug' => $lproduct->slug]) }}"
                                                 class="product-name"><span>{{ $lproduct->name }}</span></a>
+
                                             <div class="wrap-price"><span
                                                     class="product-price">৳{{ $lproduct->regular_price }}</span></div>
                                         </div>
+                                        {{-- <div class="wrap-price"><span
+                                                    class="product-price"><del>৳{{ $lproduct->regular_price }}</del></span></div>
+                                          </div> --}}
+
                                     </div>
                                 @endforeach
 
@@ -115,8 +130,8 @@
             <h3 class="title-box">Book Categories</h3>
             <div class="wrap-top-banner">
                 <a href="#" class="link-banner banner-effect-2">
-                    <figure><img src="{{ asset('assets/images/category_banner1.jpg') }}" width="1170" height="240"
-                            alt=""></figure>
+                    <figure><img src="{{ asset('assets/images/category_banner1.jpg') }}" width="1170"
+                            height="240" alt=""></figure>
                 </a>
             </div>
             <div class="wrap-products">

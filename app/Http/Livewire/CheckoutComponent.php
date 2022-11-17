@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Profile;
+use App\Models\User;
 use App\Models\Shipping;
 use App\Models\Transaction;
 use Stripe;
@@ -48,6 +50,10 @@ class CheckoutComponent extends Component
     public $exp_month;
     public $exp_year;
     public $cvc;
+    public $total;
+    public $flag;
+    public $balance;
+
 
     public function updated($fields)
     {
@@ -119,6 +125,7 @@ class CheckoutComponent extends Component
         $order->discount = session()->get('checkout')['discount'];
         $order->tax = session()->get('checkout')['tax'];
         $order->total = session()->get('checkout')['total'];
+       
         $order->firstname = $this->firstname;
         $order->lastname = $this->lastname;
         $order->email = $this->email;
@@ -180,8 +187,7 @@ class CheckoutComponent extends Component
             $transaction->mode = 'cod';
             $transaction->status = 'pending';
             $transaction->save();
-        }
-        else if ($this->paymentmode == 'card') {
+        } else if ($this->paymentmode == 'card') {
             $stripe = Stripe::make(env('STRIPE_KEY'));
 
             try {
@@ -242,9 +248,12 @@ class CheckoutComponent extends Component
                 $this->thankyou = 0;
             }
         }
+
         $this->thankyou = 1;
+        $this->total=session()->get('checkout')['total'];
         Cart::instance('cart')->destroy();
-        session()->forget('checkout'); 
+
+        session()->forget('checkout');
 
         $this->sendOrderConfirmationMail($order);
     }
@@ -285,6 +294,24 @@ class CheckoutComponent extends Component
     public function render()
     {
         $this->verifyForCheckout();
+
+        $userProfile = Profile::where('user_id', Auth::user()->id)->first();
+        if (!$userProfile) {
+            $profile = new Profile();
+            $profile->user_id = Auth::user()->id;
+            $profile->save();
+        }
+        $user = User::find(Auth::user()->id);
+        $this->balance = $user->balance;
+        //$this->total=session()->get('checkout')['total'];
+       // $this->balance=$user->balance - $this->total;
+       if($this->thankyou == 1)
+       {
+           $user->balance=$user->balance - $this->total;
+           $user->save();
+       }
+
+
         return view('livewire.checkout-component')->layout("layouts.base");
     }
 }

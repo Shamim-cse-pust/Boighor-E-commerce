@@ -1033,7 +1033,7 @@ li.menu-item .nav-label.sale-label::before{
 .wrap-main-slide .slide-1 .f-title{
     font-size: 35px;
     line-height: 28.8px;
-    color: #555555;
+    color: #5508e4;
     text-transform: uppercase;
     font-weight: 400;
     margin-left: -2px;
@@ -1044,15 +1044,15 @@ li.menu-item .nav-label.sale-label::before{
     font-weight: 700;
 }
 .wrap-main-slide .slide-1 .subtitle{
-    font-size: 18px;
+    font-size: 25px;
     line-height: 24px;
-    color: #555555;
+    color: #5508e4;
     display: inline-block;
 }
 .wrap-main-slide .slide-1 .sale-info{
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
-    color: #888888;
+    color: #5508e4;
     margin-top: 6px;
     margin-bottom: 19px;
 }

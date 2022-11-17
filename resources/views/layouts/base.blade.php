@@ -27,7 +27,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.1/nouislider.min.css">
-        
+
 
     @livewireStyles
 </head>
@@ -135,6 +135,10 @@
                                                             Setting</a>
                                                     </li>
                                                     <li class="menu-item">
+                                                        <a title="Sales" href="{{ route('admin.token') }}">Recharge
+                                                            Setting</a>
+                                                    </li>
+                                                    <li class="menu-item">
                                                         <a title="Orders" href="{{ route('admin.orders') }}">All
                                                             Orders</a>
                                                     </li>
@@ -205,8 +209,8 @@
                         <div class="mid-section main-info-area">
 
                             <div class="wrap-logo-top left-section">
-                                <a href="/" class="link-to-home"><img src="{{ asset('assets/images/Boighor.jpg') }}"
-                                        alt="logo"></a>
+                                <a href="/" class="link-to-home"><img
+                                        src="{{ asset('assets/images/Boighor.jpg') }}" alt="logo"></a>
                             </div>
 
                             @livewire('header-search-component')
